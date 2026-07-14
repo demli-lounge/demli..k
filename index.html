@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#030303">
+  <meta name="description" content="Dəmli..k Lounge premium menyu">
+  <title>Dəmli..k Lounge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="site">
+    <section class="poster" id="home" aria-label="Dəmli..k Lounge premium menyu">
+      <img class="page-image" src="assets/premium-page.png" alt="Dəmli..k Lounge premium menyu">
+      <img class="logo-light" src="assets/logo-glow.png" alt="" aria-hidden="true">
+      <a class="menu-hotspot" href="#menu" aria-label="Menyu bölməsinə keç"></a>
+      <span id="menu" class="menu-target" aria-hidden="true"></span>
+    </section>
+  </main>
+
+  <script>
+    document.querySelector('.menu-hotspot').addEventListener('click', function (event) {
+      event.preventDefault();
+      const poster = document.querySelector('.poster');
+      const targetY = poster.offsetTop + poster.offsetHeight * 0.245;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+*{
+  box-sizing:border-box;
+}
+html{
+  scroll-behavior:smooth;
+  background:#020202;
+}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,170,0,.08), transparent 34%),
+    #020202;
+  color:#fff;
+  overflow-x:hidden;
+}
+.site{
+  width:100%;
+}
+.poster{
+  position:relative;
+  width:min(100%, 1280px);
+  margin:0 auto;
+  background:#030303;
+  box-shadow:
+    0 0 70px rgba(0,0,0,.95),
+    0 0 45px rgba(255,170,0,.08);
+  overflow:hidden;
+}
+.page-image{
+  display:block;
+  width:100%;
+  height:auto;
+  image-rendering:auto;
+  filter:contrast(1.035) saturate(1.035);
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.logo-light{
+  position:absolute;
+  z-index:3;
+  top:.4%;
+  left:27%;
+  width:46%;
+  height:auto;
+  pointer-events:none;
+  mix-blend-mode:screen;
+  opacity:.58;
+  animation:neonPulse 2.8s ease-in-out infinite alternate;
+  filter:
+    brightness(1.08)
+    drop-shadow(0 0 5px rgba(255,183,36,.80))
+    drop-shadow(0 0 13px rgba(255,147,0,.55))
+    drop-shadow(0 0 28px rgba(255,115,0,.28));
+}
+.menu-hotspot{
+  position:absolute;
+  z-index:5;
+  left:1.5%;
+  top:1%;
+  width:14%;
+  height:4.3%;
+  border-radius:12px;
+}
+.menu-hotspot:focus-visible{
+  outline:2px solid #ffc344;
+  outline-offset:4px;
+}
+.menu-target{
+  position:absolute;
+  top:24.5%;
+  left:0;
+}
+@keyframes neonPulse{
+  0%{
+    opacity:.45;
+    transform:scale(.995);
+    filter:
+      brightness(1.02)
+      drop-shadow(0 0 4px rgba(255,183,36,.62))
+      drop-shadow(0 0 10px rgba(255,147,0,.38))
+      drop-shadow(0 0 20px rgba(255,115,0,.18));
+  }
+  100%{
+    opacity:.84;
+    transform:scale(1.008);
+    filter:
+      brightness(1.24)
+      drop-shadow(0 0 8px rgba(255,206,91,.98))
+      drop-shadow(0 0 21px rgba(255,154,0,.75))
+      drop-shadow(0 0 42px rgba(255,106,0,.42));
+  }
+}
+@media (max-width:700px){
+  .poster{
+    width:100%;
+  }
+  .logo-light{
+    opacity:.65;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .logo-light{
+    animation:none;
+  }
+  html{
+    scroll-behavior:auto;
+  }
+}
